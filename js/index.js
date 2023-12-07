@@ -1,6 +1,7 @@
 const numbers = [1,2,3,4,5,6,7,8,9,0,'.']
-const operators = ['÷','X','+','-','=']
-const auxiliaryOperators = ['AC','±','%']
+const operators = ['÷','x','+','-','=']
+const auxiliaryOperators = ['AC','+/-','%']
+
 
 const blocksRefs = {
   numbers:document.querySelector('.buttons__numbers'),
@@ -9,14 +10,20 @@ const blocksRefs = {
 }
 
 
+createMurkup(numbers,blocksRefs.numbers)
+createMurkup(operators,blocksRefs.operators)
+createMurkup(auxiliaryOperators,blocksRefs.auxiliaryOperators)
+
+const btnZero = document.querySelector("[data-number='0']");
+btnZero.classList.add('button-zero')
+
+console.log(btnZero);
+
+
 function createMurkup (arr,block){
   const markup = arr.map(e => {
-    return `<div data-number='${e}' class='button js-button'>${e}</div>`
+    return `<button data-number='${e}' class='button js-button'>${e}</button>`
   }) .join('')
 
   block.insertAdjacentHTML('afterbegin', markup)
 }
-
-createMurkup(numbers,blocksRefs.numbers)
-createMurkup(operators,blocksRefs.operators)
-createMurkup(auxiliaryOperators,blocksRefs.auxiliaryOperators)

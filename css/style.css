@@ -9,6 +9,8 @@ html{
 body{
     padding: 0px;
     margin: 0;
+
+    font-family: sans-serif;
 }
 
 img {
@@ -55,25 +57,38 @@ section{
   }
   
   .calculator{
-    padding: 15px;
-      width: 300px;
-      height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+      padding: 15px;
+      padding-top: auto;
+      width: 350px;
+      height: 650px;
       border: 2px #000 solid;
       border-radius: 20px;
       background: #000;
       box-shadow: 4px 4px 4px #4f4f4f;
       color: #fff;
+      font-size: 26px;
       
   }
 
   .output{
-    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 240px;
+    width: 100%;
+
+    font-size: 50px;
+    
   }
+
 
   .buttons{
     display: flex;
     justify-content: space-between;
-    margin-top: auto;
     
   }
 
@@ -103,8 +118,27 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
+
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: #4f4f4f;
+
+    cursor: pointer;
+    transition: all 150ms linear;
   }
+
+  .button-zero{
+    width: 151px;
+    border-radius: 50px;
+  }
+
+  .button:hover,
+  .button:focus{
+    filter: brightness(120%);
+  }
+
+  .button:active{
+    filter: brightness(80%);
+  }
+
